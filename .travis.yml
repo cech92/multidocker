@@ -12,12 +12,12 @@ after_success:
     # Build images
     - docker build -t cech92/multidocker-frontend ./frontend
     - docker build -t cech92/multidocker-nginx ./nginx
-    - docker build -t cech92/multidocker-server ./server
+    - docker build -t cech92/multidocker-backend ./backend
     - docker build -t cech92/multidocker-worker ./worker
     # Login into docker
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
     # Push images to docker hub
     - docker push cech92/multidocker-frontend
     - docker push cech92/multidocker-nginx
-    - docker push cech92/multidocker-server
+    - docker push cech92/multidocker-backend
     - docker push cech92/multidocker-worker
