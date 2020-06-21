@@ -30,7 +30,7 @@
             "portMappings": [
                 {
                     "hostPort": 80,
-                    "cotnainerPort": 80
+                    "containerPort": 80
                 }
             ],
             "links": ["frontend", "backend"],
