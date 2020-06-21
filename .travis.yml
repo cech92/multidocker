@@ -21,3 +21,16 @@ after_success:
     - docker push cech92/multidocker-nginx
     - docker push cech92/multidocker-backend
     - docker push cech92/multidocker-worker
+
+deploy:
+    edge: true
+    provider: elasticbeanstalk
+    region: eu-central-1
+    app: multidocker
+    env: Multidocker-env
+    bucket_name: elasticbeanstalk-eu-central-1-371401786304
+    bucket_path: docker-multi
+    on:
+        branch: master
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
